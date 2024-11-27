@@ -80,12 +80,13 @@ class _DashboardFragmentState extends State<DashboardFragment> {
             },
             loadingWidget: DashboardShimmer(),
             onSuccess: (snap) {
-              print(snap);
+              // print(snap);
               // if (snap.serviceLocations.validate().isEmpty) {
               //   print("Locations list is empty");
               // } else {
               //   snap.serviceLocations.validate().forEach((service) {
               //     print("Service: " + (service.serviceName ?? "Unknown service"));
+              //     print("Category Image: ${service.categoryImage}");
               //     service.serviceAddressMapping.validate().forEach((action){
                     
               //       if (service.serviceAddressMapping.validate().isEmpty) {

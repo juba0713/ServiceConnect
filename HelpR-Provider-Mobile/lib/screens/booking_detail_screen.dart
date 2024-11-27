@@ -118,7 +118,8 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       onAccept: (context) async {
         if (status == BookingStatusKeys.pending) {
           appStore.setLoading(true);
-          updateBooking(res, '', BookingStatusKeys.accept);
+          //Julius Basas
+          updateBooking(res, '', BookingStatusKeys.inProgress);
         } else if (status == BookingStatusKeys.rejected) {
           appStore.setLoading(true);
           updateBooking(res, '', BookingStatusKeys.rejected);
@@ -612,17 +613,36 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                   onAccept: (_) async {
                     var request = {
                       CommonKeys.id: res.bookingDetail!.id.validate(),
-                      BookingUpdateKeys.status: BookingStatusKeys.accept,
+                      //Added By Julius Basas
+                      BookingUpdateKeys.startAt: formatBookingDate(DateTime.now().toString(), format: BOOKING_SAVE_FORMAT, isLanguageNeeded: false),
+                      BookingUpdateKeys.status: BookingStatusKeys.inProgress,
                       BookingUpdateKeys.paymentStatus: res.bookingDetail!.isAdvancePaymentDone ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID : res.bookingDetail!.paymentStatus.validate(),
                     };
+
+                    /*
+                    Added by Julius Basas
+                    */
+                    var requests = {
+                      CommonKeys.id: widget.bookingId,
+                      CommonKeys.handymanId: [appStore.userId.validate()],
+                    };
+
                     appStore.setLoading(true);
+
+                    await assignBooking(requests).then((res) async {
+
+                      toast(res.message);
+                    }).catchError((e) {
+      
+                      toast(e.toString());
+                    });
 
                     bookingUpdate(request).then((res) async {
                       LiveStream().emit(LIVESTREAM_UPDATE_BOOKINGS);
                       init(flag: true);
                     }).catchError((e) {
                       toast(e.toString());
-                    });
+                    });                 
                   },
                 );
               }

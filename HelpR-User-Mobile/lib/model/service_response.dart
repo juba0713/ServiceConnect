@@ -44,8 +44,9 @@ class ServiceLocationResponse{
   int? categoryId;
   String? categoryName;
   List<ServiceAddressMapping>? serviceAddressMapping;
+  String? categoryImage;
 
-  ServiceLocationResponse({this.serviceId, this.serviceName, this.categoryId, this.categoryName, this.serviceAddressMapping});
+  ServiceLocationResponse({this.serviceId, this.serviceName, this.categoryId, this.categoryName, this.serviceAddressMapping, this.categoryImage});
   
   factory ServiceLocationResponse.fromJson(Map<String, dynamic> json) {
     return ServiceLocationResponse(
@@ -53,7 +54,8 @@ class ServiceLocationResponse{
       serviceName : json['service_name'],
       categoryId: json['category_id'],
       categoryName: json['category_name'],
-      serviceAddressMapping: json['service_address_mapping'] != null ? (json['service_address_mapping'] as List).map((i) => ServiceAddressMapping.fromJson(i)).toList() : null
+      serviceAddressMapping: json['service_address_mapping'] != null ? (json['service_address_mapping'] as List).map((i) => ServiceAddressMapping.fromJson(i)).toList() : null,
+      categoryImage: json['category_image']
     );
   }
 
@@ -64,6 +66,7 @@ class ServiceLocationResponse{
     data['category_id'] = this.categoryId;
     data['category_name'] = this.categoryName;
     data['service_address_mapping'] = this.serviceAddressMapping;
+    data['category_image'] = this.categoryImage;
     return data;
   }
 }

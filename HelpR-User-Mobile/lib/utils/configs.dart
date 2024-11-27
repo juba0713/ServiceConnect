@@ -1,12 +1,12 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
-const APP_NAME = 'Handyman Service';
-const APP_NAME_TAG_LINE = 'On-Demand Home Services App';
+const APP_NAME = 'ServiceConnect';
+const APP_NAME_TAG_LINE = 'Your Gateway to Reliable Local Services';
 var defaultPrimaryColor = Color(0xFF5F60B9);
 
 // Don't add slash at the end of the url
-const DOMAIN_URL = 'http://192.168.1.13:8080'; // Don't add slash at the end of the url
+const DOMAIN_URL = 'http://192.168.101.3:8080'; // Don't add slash at the end of the url
 const BASE_URL = '$DOMAIN_URL/api/';
 
 const DEFAULT_LANGUAGE = 'en';
@@ -59,19 +59,20 @@ const SADAD_PAY_URL = "https://d.sadad.qa";
 
 DateTime todayDate = DateTime(2022, 8, 24);
 
+//Changed By Julius Basas
 Country defaultCountry() {
   return Country(
-    phoneCode: '91',
-    countryCode: 'IN',
+    phoneCode: '63',
+    countryCode: 'PH',
     e164Sc: 91,
     geographic: true,
     level: 1,
-    name: 'India',
-    example: '9123456789',
-    displayName: 'India (IN) [+91]',
-    displayNameNoCountryCode: 'India (IN)',
+    name: 'Philippines',
+    example: '9323569314',
+    displayName: 'Philippines (PH) [+63]',
+    displayNameNoCountryCode: 'Philippines (PH)',
     e164Key: '91-IN-0',
-    fullExampleWithPlusSign: '+919123456789',
+    fullExampleWithPlusSign: '+639323569314',
   );
 }
 

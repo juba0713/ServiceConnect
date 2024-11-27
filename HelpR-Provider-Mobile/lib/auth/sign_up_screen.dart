@@ -168,14 +168,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
           controller: mobileCont,
           focus: mobileFocus,
           isValidationRequired: false,
-          buildCounter: (_, {required int currentLength, required bool isFocused, required int? maxLength}) {
-            return TextButton(
-              child: Text(languages.lblChangeCountry, style: primaryTextStyle(size: 12)),
-              onPressed: () {
-                changeCountry();
-              },
-            );
-          },
+          //Removed By Julius Basas
+          // Change Country Button
+          // buildCounter: (_, {required int currentLength, required bool isFocused, required int? maxLength}) {
+          //   return TextButton(
+          //     child: Text(languages.lblChangeCountry, style: primaryTextStyle(size: 12)),
+          //     onPressed: () {
+          //       changeCountry();
+          //     },
+          //   );
+          //},
           errorThisFieldRequired: languages.hintRequired,
           nextFocus: passwordFocus,
           decoration: inputDecoration(context, hint: '${languages.hintContactNumberTxt}').copyWith(

@@ -708,15 +708,17 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     } else if (bookingResponse.bookingDetail!.status == BookingStatusKeys.inProgress) {
       return Row(
         children: [
-          if (!bookingResponse.service!.isOnlineService.validate())
-            AppButton(
-              text: language.lblHold,
-              textColor: Colors.white,
-              color: hold,
-              onTap: () {
-                _handleHoldClick(status: bookingResponse);
-              },
-            ).expand(),
+          //Removed By Julius Basas
+          //Removed the Hold Button
+          // if (!bookingResponse.service!.isOnlineService.validate())
+          //   AppButton(
+          //     text: language.lblHold,
+          //     textColor: Colors.white,
+          //     color: hold,
+          //     onTap: () {
+          //       _handleHoldClick(status: bookingResponse);
+          //     },
+          //   ).expand(),
           if (!bookingResponse.service!.isOnlineService.validate()) 16.width,
           AppButton(
             text: language.done,
@@ -727,7 +729,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             },
           ).expand(),
         ],
-      ).paddingOnly(left: 16, right: 16, bottom: 16);
+      ).paddingOnly(left: 0, right: 16, bottom: 16);
     } else if (bookingResponse.bookingDetail!.status == BookingStatusKeys.hold) {
       return Row(
         children: [

@@ -260,14 +260,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
           textFieldType: isAndroid ? TextFieldType.PHONE : TextFieldType.NAME,
           controller: mobileCont,
           focus: mobileFocus,
-          buildCounter: (_, {required int currentLength, required bool isFocused, required int? maxLength}) {
-            return TextButton(
-              child: Text(language.lblChangeCountry, style: primaryTextStyle(size: 12)),
-              onPressed: () {
-                changeCountry();
-              },
-            );
-          },
+          //Removed By Julius Basas
+          // Change Country Button
+          // buildCounter: (_, {required int currentLength, required bool isFocused, required int? maxLength}) {
+          //   return TextButton(
+          //     child: Text(language.lblChangeCountry, style: primaryTextStyle(size: 12)),
+          //     onPressed: () {
+          //       changeCountry();
+          //     },
+          //   );
+          // },
           errorThisFieldRequired: language.requiredText,
           nextFocus: passwordFocus,
           decoration: inputDecoration(context, labelText: "${language.hintContactNumberTxt}").copyWith(

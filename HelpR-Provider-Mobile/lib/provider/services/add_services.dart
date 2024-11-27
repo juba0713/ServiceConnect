@@ -80,8 +80,7 @@ class _AddServicesState extends State<AddServices> {
 
   List<StaticDataModel> typeStaticData = [
     StaticDataModel(key: SERVICE_TYPE_FREE, value: languages.lblFree),
-    StaticDataModel(key: SERVICE_TYPE_FIXED, value: languages.lblFixed),
-    StaticDataModel(key: SERVICE_TYPE_HOURLY, value: languages.lblHourly),
+    StaticDataModel(key: SERVICE_TYPE_FIXED, value: languages.lblFixed)
   ];
 
   List<StaticDataModel> statusListStaticData = [

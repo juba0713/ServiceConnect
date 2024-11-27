@@ -485,7 +485,7 @@ class LanguageEn extends Languages {
   String get lblHandymanType => "Handyman Type";
 
   @override
-  String get lblFixed => "Fixed";
+  String get lblFixed => "No Warranty";
 
   @override
   String get lblHello => "Hello";
@@ -782,7 +782,7 @@ class LanguageEn extends Languages {
   String get lblAssignToMyself => "Assign to Myself";
 
   @override
-  String get lblFree => "Free";
+  String get lblFree => "Under Warranty";
 
   @override
   String get lblMyProvider => "My Provider";

@@ -265,7 +265,8 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
               if (widget.selectedPackage == null) serviceWidget(context),
 
               packageWidget(),
-              buildBookingTypeInput(), // Add here
+              //Removed by Julius Basas
+              //buildBookingTypeInput(), // Add here
               addressAndDescriptionWidget(context),
 
               Text("${language.hintDescription}", style: boldTextStyle(size: LABEL_TEXT_SIZE)),
@@ -316,17 +317,19 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
 
               priceWidget(),
 
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Observer(builder: (context) {
-                    return WalletBalanceComponent().visible(appConfigurationStore.isEnableUserWallet && widget.data.serviceDetail!.isFixedService);
-                  }),
-                  16.height,
-                  Text(language.disclaimer, style: boldTextStyle(size: LABEL_TEXT_SIZE)),
-                  Text(language.disclaimerContent, style: secondaryTextStyle()),
-                ],
-              ).paddingSymmetric(vertical: 16),
+              //Removed by julius basas
+              //Wallet balance
+              // Column(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     Observer(builder: (context) {
+              //       return WalletBalanceComponent().visible(appConfigurationStore.isEnableUserWallet && widget.data.serviceDetail!.isFixedService);
+              //     }),
+              //     16.height,
+              //     Text(language.disclaimer, style: boldTextStyle(size: LABEL_TEXT_SIZE)),
+              //     Text(language.disclaimerContent, style: secondaryTextStyle()),
+              //   ],
+              // ).paddingSymmetric(vertical: 16),
 
               36.height,
 
@@ -534,47 +537,49 @@ void onBookingTypeChanged(String? newValue) {
         children: [
           if (widget.selectedPackage == null) 16.height,
           if (widget.selectedPackage == null)
-            Container(
-              padding: EdgeInsets.only(left: 16, top: 8, bottom: 8),
-              decoration: boxDecorationDefault(color: context.cardColor),
-              child: Row(
-                children: [
-                  Wrap(
-                    spacing: 8,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      ic_coupon_prefix.iconImage(color: Colors.green, size: 20),
-                      Text(language.lblCoupon, style: primaryTextStyle()),
-                    ],
-                  ).expand(),
-                  16.width,
-                  TextButton(
-                    onPressed: () {
-                      if (appliedCouponData != null) {
-                        showConfirmDialogCustom(
-                          context,
-                          dialogType: DialogType.DELETE,
-                          title: language.doYouWantTo,
-                          positiveText: language.lblDelete,
-                          negativeText: language.lblCancel,
-                          onAccept: (p0) {
-                            appliedCouponData = null;
-                            setPrice();
-                            setState(() {});
-                          },
-                        );
-                      } else {
-                        applyCoupon();
-                      }
-                    },
-                    child: Text(
-                      appliedCouponData != null ? language.lblRemoveCoupon : language.applyCoupon,
-                      style: primaryTextStyle(color: context.primaryColor),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            // Removed By Julius Basas
+            // This is for Apply Coupon
+            // Container(
+            //   padding: EdgeInsets.only(left: 16, top: 8, bottom: 8),
+            //   decoration: boxDecorationDefault(color: context.cardColor),
+            //   child: Row(
+            //     children: [
+            //       Wrap(
+            //         spacing: 8,
+            //         crossAxisAlignment: WrapCrossAlignment.center,
+            //         children: [
+            //           ic_coupon_prefix.iconImage(color: Colors.green, size: 20),
+            //           Text(language.lblCoupon, style: primaryTextStyle()),
+            //         ],
+            //       ).expand(),
+            //       16.width,
+            //       TextButton(
+            //         onPressed: () {
+            //           if (appliedCouponData != null) {
+            //             showConfirmDialogCustom(
+            //               context,
+            //               dialogType: DialogType.DELETE,
+            //               title: language.doYouWantTo,
+            //               positiveText: language.lblDelete,
+            //               negativeText: language.lblCancel,
+            //               onAccept: (p0) {
+            //                 appliedCouponData = null;
+            //                 setPrice();
+            //                 setState(() {});
+            //               },
+            //             );
+            //           } else {
+            //             applyCoupon();
+            //           }
+            //         },
+            //         child: Text(
+            //           appliedCouponData != null ? language.lblRemoveCoupon : language.applyCoupon,
+            //           style: primaryTextStyle(color: context.primaryColor),
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
           24.height,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
