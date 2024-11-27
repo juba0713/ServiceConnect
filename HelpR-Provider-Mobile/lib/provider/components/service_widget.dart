@@ -58,6 +58,27 @@ class ServiceComponent extends StatelessWidget {
                     ),
                   ),
                 ),
+                Positioned(
+                top: 45,
+                left: 10,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  constraints: BoxConstraints(maxWidth: context.width() * 0.3),
+                  decoration: boxDecorationWithShadow(
+                    backgroundColor: Colors.blue.withOpacity(0.3), // Blue background with 70% opacity
+                    borderRadius: radius(24),
+                  ),
+                  child: Text(
+                    data.isFreeService ? 'Under Warranty' : 'No Warranty',
+                    style: boldTextStyle(
+                      color: data.isFreeService ? Colors.green : Colors.red,
+                      size: 12,
+                    ),
+                  ),
+                ),
+              ),
+
+
                 if (data.isOnlineService)
                   Positioned(
                     top: 20,
@@ -65,25 +86,25 @@ class ServiceComponent extends StatelessWidget {
                     child: Icon(Icons.circle, color: Colors.green, size: 12),
                   ),
                 Positioned(
-                  bottom: 12,
-                  right: 8,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: boxDecorationWithShadow(
-                      backgroundColor: primaryColor,
-                      borderRadius: radius(24),
-                      border: Border.all(color: context.cardColor, width: 2),
-                    ),
-                    child: PriceWidget(
-                      price: data.price.validate(),
-                      isHourlyService: data.type.validate() == SERVICE_TYPE_HOURLY,
+                bottom: 12,
+                right: 8,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: boxDecorationWithShadow(
+                    backgroundColor: primaryColor,
+                    borderRadius: radius(24),
+                    border: Border.all(color: context.cardColor, width: 2),
+                  ),
+                  child: Text(
+                    data.isFreeService ? '\$0.00' : '\$${data.price.validate().toStringAsFixed(2)}',
+                    style: boldTextStyle(
                       color: Colors.white,
-                      hourlyTextColor: Colors.white,
                       size: 14,
-                      isFreeService: data.isFreeService,
                     ),
                   ),
                 ),
+              ),
+
                 Positioned(
                   bottom: 0,
                   left: 16,
@@ -100,6 +121,8 @@ class ServiceComponent extends StatelessWidget {
                 directionMarguee: DirectionMarguee.oneDirection,
                 child: Text(data.name.validate(), style: boldTextStyle()).paddingSymmetric(horizontal: 16),
               ),
+              4.height,
+              // New Label for Warranty Status
               16.height,
             ],
           ),

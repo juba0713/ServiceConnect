@@ -40,9 +40,9 @@ return [
         'MAIL_HOST' => 'smtp.gmail.com',
         'MAIL_PORT' => '587',
         'MAIL_ENCRYPTION' => 'tls',
-        'MAIL_USERNAME' => 'youremail@gmail.com',
-        'MAIL_PASSWORD' => 'Password',
-        'MAIL_FROM_ADDRESS' => 'youremail@gmail.com',
+        'MAIL_USERNAME' => 'jusbas0713@gmail.com',
+        'MAIL_PASSWORD' => 'cnydevqvzzrwcvdi',
+        'MAIL_FROM_ADDRESS' => 'jusbas0713@gmail.com',
         'MAIL_FROM_NAME' => env('APP_NAME')
     ],
     'SUBSCRIPTION_STATUS' =>[

@@ -361,10 +361,28 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                                   onAccept: (_) async {
                                     var request = {
                                       CommonKeys.id: widget.bookingData.id.validate(),
-                                      BookingUpdateKeys.status: BookingStatusKeys.accept,
+                                      BookingUpdateKeys.status: BookingStatusKeys.inProgress,
+                                      BookingUpdateKeys.startAt: formatBookingDate(DateTime.now().toString(), format: BOOKING_SAVE_FORMAT, isLanguageNeeded: false),
                                       BookingUpdateKeys.paymentStatus: widget.bookingData.isAdvancePaymentDone ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID : widget.bookingData.paymentStatus.validate(),
                                     };
+
+                                    /*
+                                    Added by Julius Basas
+                                    */
+                                    var requests = {
+                                      CommonKeys.id: widget.bookingData.id.validate(),
+                                      CommonKeys.handymanId: [appStore.userId.validate()],
+                                    };
+
                                     appStore.setLoading(true);
+
+                                    await assignBooking(requests).then((res) async {
+
+                                      toast(res.message);
+                                    }).catchError((e) {
+
+                                      toast(e.toString());
+                                    });
 
                                     bookingUpdate(request).then((res) async {
                                       setState(() {});

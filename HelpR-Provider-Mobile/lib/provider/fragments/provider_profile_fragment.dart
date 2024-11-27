@@ -222,35 +222,36 @@ class ProviderProfileFragmentState extends State<ProviderProfileFragment> {
                           BlogListScreen().launch(context);
                         },
                       ),
-                    Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
-                    SettingItemWidget(
-                      leading: Image.asset(handyman, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
-                      title: languages.lblAllHandyman,
-                      trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
-                      onTap: () {
-                        HandymanListScreen().launch(context);
-                      },
-                    ),
-                    Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
-                    if (appConfigurationStore.servicePackageStatus)
-                      SettingItemWidget(
-                        leading: Image.asset(ic_packages, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
-                        title: languages.packages,
-                        trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
-                        onTap: () {
-                          PackageListScreen().launch(context);
-                        },
-                      ),
-                    Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
-                    if (appConfigurationStore.serviceAddonStatus)
-                      SettingItemWidget(
-                        leading: Image.asset(ic_addon_service, height: 17, width: 17, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
-                        title: languages.addonServices,
-                        trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
-                        onTap: () {
-                          AddonServiceListScreen().launch(context);
-                        },
-                      ),
+                    //Remove by Julius Basas
+                    // Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
+                    // SettingItemWidget(
+                    //   leading: Image.asset(handyman, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                    //   title: languages.lblAllHandyman,
+                    //   trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                    //   onTap: () {
+                    //     HandymanListScreen().launch(context);
+                    //   },
+                    // ),
+                    // Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
+                    // if (appConfigurationStore.servicePackageStatus)
+                    //   SettingItemWidget(
+                    //     leading: Image.asset(ic_packages, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                    //     title: languages.packages,
+                    //     trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                    //     onTap: () {
+                    //       PackageListScreen().launch(context);
+                    //     },
+                    //   ),
+                    // Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
+                    // if (appConfigurationStore.serviceAddonStatus)
+                    //   SettingItemWidget(
+                    //     leading: Image.asset(ic_addon_service, height: 17, width: 17, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                    //     title: languages.addonServices,
+                    //     trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                    //     onTap: () {
+                    //       AddonServiceListScreen().launch(context);
+                    //     },
+                    //   ),
                     Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
                     if (appConfigurationStore.slotServiceStatus)
                       SettingItemWidget(
@@ -288,21 +289,21 @@ class ProviderProfileFragmentState extends State<ProviderProfileFragment> {
                         TaxesScreen().launch(context);
                       },
                     ),
-                    if (appStore.earningTypeCommission)
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
-                          SettingItemWidget(
-                            leading: Image.asset(ic_un_fill_wallet, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
-                            title: languages.lblWalletHistory,
-                            trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
-                            onTap: () {
-                              WalletHistoryScreen().launch(context);
-                            },
-                          ),
-                        ],
-                      ),
+                    // if (appStore.earningTypeCommission)
+                    //   Column(
+                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                    //     children: [
+                    //       Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
+                    //       SettingItemWidget(
+                    //         leading: Image.asset(ic_un_fill_wallet, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                    //         title: languages.lblWalletHistory,
+                    //         trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                    //         onTap: () {
+                    //           WalletHistoryScreen().launch(context);
+                    //         },
+                    //       ),
+                    //     ],
+                    //   ),
                     Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
                     SettingItemWidget(
                       leading: Image.asset(ic_theme, height: 18, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),

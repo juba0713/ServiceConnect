@@ -162,7 +162,9 @@ class BasicInfoComponentState extends State<BasicInfoComponent> {
                 ],
               ),
               if (userData.userType.validate() == IS_USER || widget.bookingInfo != null && (widget.bookingInfo!.providerData!.id.validate() != widget.handymanData!.id.validate()))
-                if (widget.bookingDetail!.canCustomerContact)
+                //Removed By Julius Basas
+                //This allowed provider to chat with user even though the booking is still pending
+                //if (widget.bookingDetail!.canCustomerContact)
                   Column(
                     children: [
                       8.height,

@@ -42,6 +42,7 @@ class _SliderLocationComponentState extends State<SliderLocationComponent> {
 
   @override
   void initState() {
+    appStore.setLoading(false);
     super.initState();
     if (getBoolAsync(AUTO_SLIDER_STATUS, defaultValue: true) && widget.sliderList.length >= 2) {
       _timer = Timer.periodic(Duration(seconds: DASHBOARD_AUTO_SLIDER_SECOND), (Timer timer) {
@@ -223,6 +224,7 @@ class _SliderLocationComponentState extends State<SliderLocationComponent> {
 
                   if (permissionStatus.isGranted) {
                     try {
+                      appStore.setLoading(true);
                       // Fetch the current position
                       Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 

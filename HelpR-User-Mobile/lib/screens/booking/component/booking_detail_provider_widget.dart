@@ -117,7 +117,9 @@ class BookingDetailProviderWidgetState extends State<BookingDetailProviderWidget
                 ),
               ],
             ),
-          if (widget.providerIsHandyman)
+            //Removed By Julius Basas
+            //This will allowed user to chat with the provider even though the booking is still pending
+          // if (widget.providerIsHandyman)
             Row(
               children: [
                 if (widget.providerData.contactNumber.validate().isNotEmpty)

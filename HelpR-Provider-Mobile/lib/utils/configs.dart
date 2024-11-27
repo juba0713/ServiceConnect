@@ -6,7 +6,7 @@ const DEFAULT_LANGUAGE = 'en';
 
 const primaryColor = Color(0xFF5F60B9);
 
-const DOMAIN_URL = 'https://serviceconnect.work'; // Don't add slash at the end of the url
+const DOMAIN_URL = 'http://192.168.101.3:8080'; // Don't add slash at the end of the url
 
 const BASE_URL = "$DOMAIN_URL/api/";
 
@@ -43,19 +43,20 @@ const PAYPAL_CURRENCY_CODE = 'USD';
 const STRIPE_MERCHANT_COUNTRY_CODE = 'IN';
 const STRIPE_CURRENCY_CODE = 'INR';
 
+//Changed By Julius Basas
 Country defaultCountry() {
   return Country(
-    phoneCode: '91',
-    countryCode: 'IN',
+    phoneCode: '63',
+    countryCode: 'PH',
     e164Sc: 91,
     geographic: true,
     level: 1,
-    name: 'India',
-    example: '9123456789',
-    displayName: 'India (IN) [+91]',
-    displayNameNoCountryCode: 'India (IN)',
+    name: 'Philippines',
+    example: '9323569314',
+    displayName: 'Philippines (PH) [+63]',
+    displayNameNoCountryCode: 'Philippines (PH)',
     e164Key: '91-IN-0',
-    fullExampleWithPlusSign: '+919123456789',
+    fullExampleWithPlusSign: '+639323569314',
   );
 }
 

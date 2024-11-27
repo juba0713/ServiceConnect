@@ -65,22 +65,22 @@ class TotalComponent extends StatelessWidget {
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
-        Observer(builder: (context) {
-          if (appStore.earningTypeCommission)
-            return TotalWidget(
-              title: languages.lblWallet,
-              total: snap.providerWallet != null ? snap.providerWallet!.amount.validate().toPriceFormat().toString() : 0.toPriceFormat().toString(),
-              icon: un_fill_wallet,
-            ).onTap(
-              () {
-                WalletHistoryScreen().launch(context);
-              },
-              highlightColor: Colors.transparent,
-              splashColor: Colors.transparent,
-            );
+        // Observer(builder: (context) {
+        //   if (appStore.earningTypeCommission)
+        //     return TotalWidget(
+        //       title: languages.lblWallet,
+        //       total: snap.providerWallet != null ? snap.providerWallet!.amount.validate().toPriceFormat().toString() : 0.toPriceFormat().toString(),
+        //       icon: un_fill_wallet,
+        //     ).onTap(
+        //       () {
+        //         WalletHistoryScreen().launch(context);
+        //       },
+        //       highlightColor: Colors.transparent,
+        //       splashColor: Colors.transparent,
+        //     );
 
-          return Offstage();
-        }),
+        //   return Offstage();
+        // }),
       ],
     ).paddingAll(16);
   }

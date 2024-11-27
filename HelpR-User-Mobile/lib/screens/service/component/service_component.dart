@@ -107,6 +107,33 @@ class ServiceComponentState extends State<ServiceComponent> {
                       ),
                     ),
                   ),
+
+                  Positioned(
+                  top: 45,
+                  left: 12,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3), // Reduced padding
+                    decoration: boxDecorationWithShadow(
+                      backgroundColor: Colors.blue.withOpacity(0.3), // Blue background with 30% opacity
+                      borderRadius: radius(24),
+                    ),
+                    child: IntrinsicWidth( // Makes the width flexible based on the content
+                      child: Center(
+                        child: Text(
+                          widget.serviceData!.isFreeService ? 'Under Warranty' : 'No Warranty',
+                          style: boldTextStyle(
+                            color: widget.serviceData!.isFreeService ? Colors.green : Colors.red,
+                            size: 12,
+                          ),
+                          textAlign: TextAlign.center, // Centers the text
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+
+
                   if (widget.serviceData!.isOnlineService)
                     Positioned(
                       top: 20,
